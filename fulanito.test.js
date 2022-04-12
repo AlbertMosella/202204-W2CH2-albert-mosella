@@ -19,10 +19,9 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeFalsy;
+      expect(expectedResult).toBe(false);
     });
   });
-
   describe("When it receives (0, -0)", () => {
     test("It should return true", () => {
       const a = 0;
@@ -30,10 +29,9 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeTruthy;
+      expect(expectedResult).toBe(true);
     });
   });
-
   describe("When it receives (-0, 0)", () => {
     test("It should return true", () => {
       const a = -0;
@@ -41,10 +39,9 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeTruthy;
+      expect(expectedResult).toBe(true);
     });
   });
-
   describe("When it receives (1, 1)", () => {
     test("It should return true", () => {
       const a = 1;
@@ -52,7 +49,7 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeTruthy;
+      expect(expectedResult).toBe(true);
     });
   });
   describe("When it receives (1, '1')", () => {
@@ -62,7 +59,7 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeFalsy;
+      expect(expectedResult).toBe(false);
     });
   });
   describe("When it receives (true, false)", () => {
@@ -72,7 +69,7 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeFalsy;
+      expect(expectedResult).toBe(false);
     });
   });
   describe("When it receives (false, false)", () => {
@@ -82,17 +79,27 @@ describe("Given the stricEquals function", () => {
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeTruthy;
+      expect(expectedResult).toBe(true);
     });
   });
   describe("When it receives ('Water', 'oil')", () => {
     test("It should return false", () => {
       const a = "Water";
-      const b = "Oil";
+      const b = "oil";
 
       const expectedResult = strictEquals(a, b);
 
-      expect(expectedResult).toBeFalsy;
+      expect(expectedResult).toBe(false);
+    });
+  });
+  describe("When it receives (2, 2)", () => {
+    test("It should return true", () => {
+      const a = 2;
+      const b = 2;
+
+      const expectedResult = strictEquals(a, b);
+
+      expect(expectedResult).toBe(true);
     });
   });
 });
